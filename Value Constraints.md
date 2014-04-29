@@ -39,16 +39,12 @@
 *	Constraint (n, statname): For example if n =1, statname should be NULL.
 *	specie_id and cultivar_id need to be consistent.
 	
-	
-	
 ## treatments:
 
 *	possibly standardize capitalization of names (easiest would be to have all words in all names not capitalized; this would convey the most information because (e.g.) author names would stand out from other words)
 *	similarly for definitions
 *	control: can there be more than one control treatment per citation (currently there often are)
 *	names should be unique within a citation
-
-Q: When can a treatment link to multiple citations? 
 
 ## users:
 
