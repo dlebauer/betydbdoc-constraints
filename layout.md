@@ -1,4 +1,4 @@
 Overview.md
 Constraints on Specific Tables.md
-Covariates.md
+Value Constraints.md
 Foreign Key Constraints.md
