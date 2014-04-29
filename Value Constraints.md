@@ -22,10 +22,9 @@
 *	each site must have a lat, lon
  *	lat range -90, 90
  *	lon range -180, 180
-*	geocode to enfoce consistency between lat, lon and city, state, country 
-*	country names should be normalized (use enum?)
-*	At least US state names should be normalized.  If other state names are allowed, the constraint would have to involve the country field as well (even if not, then the state would have to be null for non-US sites)
-*	city names could at least be constrained to be capitalized (many existing ones are not)
+*	Standardize geographic names (city, country, state) using TIGER / OpenStreetMap.  
+ *	use geocoding / reverse geocoding to enfoce consistency between lat, lon and city, state, country 
+ *	country names should be normalized (use enum?)
 *	som: 0 – 100
 *	mat: range: -50, 150 
 *	masl: -1000, 30,000
