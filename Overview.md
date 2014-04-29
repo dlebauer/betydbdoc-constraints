@@ -1,4 +1,4 @@
-## Categories of Constraints
+# Categories of Constraints
 
 1.	value constraints
  *	range constraints on continuous variables
