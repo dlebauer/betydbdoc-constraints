@@ -1,6 +1,7 @@
 # Foreign Key Constraints
 
-```
+```sql
+
 ALTER TABLE "traits" ADD CONSTRAINT "fk_traits_species_1" FOREIGN KEY ("specie_id") REFERENCES "species" ("id");
 
 ALTER TABLE "yields" ADD CONSTRAINT "fk_yields_species_1" FOREIGN KEY ("specie_id") REFERENCES "species" ("id");
@@ -132,6 +133,5 @@ ALTER TABLE "citations_treatments" ADD CONSTRAINT "fk_citations_treatments_treat
 ALTER TABLE "citations_treatments" ADD CONSTRAINT "fk_citations_treatments_citations_1" FOREIGN KEY ("citation_id") REFERENCES "citations" ("id");
 
 ALTER TABLE "managements" ADD CONSTRAINT "fk_managements_citations_1" FOREIGN KEY ("citation_id") REFERENCES "citations" ("id");
-
 
 ```
