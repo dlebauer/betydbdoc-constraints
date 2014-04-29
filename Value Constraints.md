@@ -7,7 +7,7 @@
 ## 	managements:
 
 *	mgmttype: constrain to one of the values in the web interface’s dropdown
-*	level: should be either >= 0 or -999; table comments should document the meaning of -999
+*	level: should be either >= 0 or NULL (or perhaps we should create a new type that allows "missing" as text value alongside numeric values)
 *	units: should be constrained to a known set of values—in fact, on a per mgmttype basis; currently there are several varying designations for the same unit in a number of cases
 *	date: Can we do CHECK(date < NOW())?
 *	dateloc: should be constrained to specific values
