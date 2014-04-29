@@ -11,7 +11,8 @@
 *	units: should be constrained to a known set of values—in fact, on a per mgmttype basis; currently there are several varying designations for the same unit in a number of cases
 *	date: Can we do CHECK(date < NOW())?
 *	dateloc: should be constrained to specific values
-* all values of citation\_id in managements should also be associated with treatment via citations\_treatments table; thus, managements.citation_id is redundant
+* all values of citation_id in managements should also be associated with treatment via citations_treatments table
+
 ##	species:
 
 *	Ensure scientificname LIKE CONCAT(genus, ‘ ‘, species, ‘%’)
