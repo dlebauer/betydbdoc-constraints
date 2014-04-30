@@ -6,7 +6,6 @@ This is a list of fields that should not be allowed to be null. In all cases, th
 * covariates: trait\_id, variable\_id
 * cultivars: specie\_id, name
 * dbfiles: file_name, file\_path, container\_type, container\_id, machine\_id
-* sites: lat, lon
 * ensembles: workflow\_id
 * formats: dataformat
 * formats\_variables: ?
