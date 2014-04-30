@@ -7,3 +7,4 @@
 2.	foreign key constraints
 3.	non-NULL constraints
 4.	uniqueness constraints (esp. designation of natural key)
+
