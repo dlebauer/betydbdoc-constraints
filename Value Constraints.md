@@ -1,17 +1,20 @@
 # Value Constraints
 
+## Global
+
+* Text fields should not have leading or trailing white spaces.
+  (are there any fields for which this is not the case?)
+
 ## Covariates
 
 *	Check level is in the range corresponding to variable referenced by variable_id.
 	
 ## 	managements:
 
-*	mgmttype: constrain to one of the values in the web interface’s dropdown
-*	level: should be either >= 0 or NULL (or perhaps we should create a new type that allows "missing" as text value alongside numeric values)
+*	mgmttype: constrain to one of the values in the web interface’s dropdown; any reason not to store these in variables table, or in a separate lookup table? if we record units and range restrictions, this would be useful.
 *	units: should be constrained to a known set of values—in fact, on a per mgmttype basis; currently there are several varying designations for the same unit in a number of cases
-*	date: CHECK(date < NOW()) 
 *	dateloc: should be constrained to specific values
-* all values of citation_id in managements should also be associated with treatment via citations_treatments table
+* all values of citation\_id in managements should also be associated with treatment via citations\_treatments table
 
 ##	species:
 
@@ -20,7 +23,6 @@
 
 ## 	sites:
 
-*	each site must have a lat, lon
  *	lat range -90, 90
  *	lon range -180, 180
 *	Standardize geographic names (city, country, state) using TIGER / OpenStreetMap.  
@@ -28,7 +30,7 @@
  *	country names should be normalized (use enum?)
 *	som: 0 – 100
 *	mat: range: -50, 150 
-*	masl: -1000, 30,000
+*	masl: -100, 10,000
 *	sitename: unique and non-null; also, ensure it does not have leading or trailing white space and no internal sequences of 2 or more consecutive spaces.  (A similar white space constraint should apply to all textual keys in all tables.)
 	
 ## traits:
@@ -42,10 +44,10 @@
 	
 ## treatments:
 
-*	possibly standardize capitalization of names (easiest would be to have all words in all names not capitalized; this would convey the most information because (e.g.) author names would stand out from other words)
+*	possibly standardize capitalization of names (easiest would be to have all words in all names not capitalized; this would convey the most information because (e.g.) author names would stand out from other words); this would need to be done manually to avoid converting proper names to lowercase
 *	similarly for definitions
-*	control: can there be more than one control treatment per citation (currently there often are)
-*	names should be unique within a citation
+*	control: there can be more than one control treatment per citation (currently there are)
+*	names should be unique within a citation and site pair
 
 ## users:
 
