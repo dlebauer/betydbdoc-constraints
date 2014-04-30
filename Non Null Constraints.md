@@ -17,7 +17,7 @@ This is a list of fields that should not be allowed to be null. In all cases, th
 * methods: name, description, citation\_id
 * models: model\_name, model\_path, revision, model\_type
 * pfts: definition, name
-* posteriors: pft_\id, format\_id
+* posteriors: pft\_id, format\_id
 * priors: phylogeny, variable\_id, distn, parama, paramb
 * runs: model\_id, site\_id, start\_time, finish\_time, outdir, outprefix, setting, parameter\_list, started\_at, ensemble\_id (note: finished\_at will not be available when record is created)
 * sites: lat, lon, sitename, greenhouse
