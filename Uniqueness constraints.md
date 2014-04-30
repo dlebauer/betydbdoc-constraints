@@ -7,16 +7,16 @@ These are "natural keys", i.e. combinations of fields that should be unique with
 For many-to-many relationship tables, the foreign key pairs should be unique; these should be implemented but are not listed here for brevity.
 
 * citations: author, year, title
-* covariates: trait_id, variable_id
-* cultivars: specie_id, name
-* dbfiles: file_name, file_path, machine_id
-* dbfiles: container_type, container_id
+* covariates: trait\_id, variable\_id
+* cultivars: specie\_id, name
+* dbfiles: file\_name, fil\e_path, machine\_id
+* dbfiles: container\_type, container\_id
 * formats\_variables: ?
-* formats: site_id, start_date, end_date, format_id
-* likelihoods: run_id, variable_id, input_id
+* formats: site\_id, start\_date, end\_date, format\_id
+* likelihoods: run\_id, variable\_id, input\_id
 * machines: hostname
-* managements: date, management_type
-* methods: name, citation_id
+* managements: date, management\_type
+* methods: name, citation\_id
 * models: model\_path
 * pfts: name
 * posteriors: pft\_id
