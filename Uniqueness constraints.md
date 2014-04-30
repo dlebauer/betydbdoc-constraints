@@ -9,7 +9,7 @@ For many-to-many relationship tables, the foreign key pairs should be unique; th
 * citations: author, year, title
 * covariates: trait\_id, variable\_id
 * cultivars: specie\_id, name
-* dbfiles: file\_name, fil\e_path, machine\_id
+* dbfiles: file\_name, file\_path, machine\_id
 * dbfiles: container\_type, container\_id
 * formats\_variables: ?
 * formats: site\_id, start\_date, end\_date, format\_id
