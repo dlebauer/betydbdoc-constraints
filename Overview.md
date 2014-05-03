@@ -1,3 +1,17 @@
+# Introduction
+
+We are proposing implementation of database level contraints. We are consiously violating Ruby's "Active Record" approach. The [Ruby manual](http://guides.rubyonrails.org/migrations.html#active-record-and-referential-integrity) suggests
+
+> The Active Record way claims that intelligence belongs in your models, not in the database. As such, features such as triggers or foreign key constraints, which push some of that intelligence back into the database, are not heavily used.
+
+The [manual](http://guides.rubyonrails.org/migrations.html#schema-dumping-and-you) states that ActiveRecord will not parse sql code, which is why views implemented in SQL are not encoded in Ruby's schema dump. We can either implement constraints either by a) find gems (such as [foreigner](https://github.com/matthuhiggins/foreigner) for foreign key constraints) to manage the constraints the "Ruby way" or b) move from using `db/schema.rb` to `db/structure.sql`, so that the schema is stored in sql rather than ruby.
+
+The `db/structure.sql` approach sounds simpler to me. I think that the following quote ([reference](http://ewout.name/2009/12/rails-models-with-teeth-and-database-constraints/)) sounds reasonable:
+
+> Data tends to outlive its applications. A tight data model is a good foundation for an application and can save you a lot of trouble when migrating the data to a different system (years later). Database constraints can make your models even tighter, and enforce integrity rules that are hard to enforce in a multi-process application environment. 
+
+Given that the Ruby web application is only one of the ways in which we use the database (e.g. we don't want to have to use the API with all of our R code ... or do we?), it seems reasonable to go with the SQL database level constraints.
+
 # Categories of Constraints
 
 1.	value constraints
