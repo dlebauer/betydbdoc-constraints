@@ -1,13 +1,26 @@
-# Value Constraints
+# Value Constraints (including some NOT NULL constraints)
 
 ## Global
 
-* Text fields should not have leading or trailing white spaces.
-  (are there any fields for which this is not the case?)
+* Text fields should not have leading or trailing white spaces. (Are there any fields for which this is not the case?)  <font color='red'>This can be checked with
+```
+CHECK(TRIM(FROM <columnname>) = <columnname>)
+```
+Probably sequences of two or more consecutive whitespace characters should be forbidden as well except for various free-form textual columns such as `traits.notes`.  This can be checked with
+```
+CHECK(REGEXP_REPLACE(TRIM(FROM <columnname>), ' +', ' ') = <columnname>)
+```
+For convenience, we should probably define a function so we can just do something like
+```
+CHECK(is_normalized(<columnname>))
+```
+</font>
+## covariates
 
-## Covariates
-
-*	Check level is in the range corresponding to variable referenced by variable_id.
+*	Check that `level` is in the range corresponding to variable referenced by `variable_id`.
+*	Check that `n` is positive <font color='red'>(or > 1 ?)</font> if it is not NULL.
+*	<font color='red'>Check that `statname` and `stat` are either both NULL or both non-NULL.  (Alternatively, ensure that `statname` is non-NULL and that it equals the empty string if and only if `stat` is NULL.)
+*	Check that `statname` is one of "SD", "SE", "MSE", "95%CI", "LSD", "MSD" or possibly "".  Consider creating an ENUM data type for this.</font>
 	
 ## 	managements:
 
