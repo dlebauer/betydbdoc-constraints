@@ -2,7 +2,8 @@
 
 ## Global
 
-* Text fields should not have leading or trailing white spaces. (Are there any fields for which this is not the case?)  <font color='red'>This can be checked with
+* Text fields should not have leading or trailing white spaces. (Are there any fields for which this is not the case?)  <font color='red'>
+This can be checked with
       ```
       CHECK(TRIM(FROM <columnname>) = <columnname>)
       ```
@@ -15,6 +16,7 @@ For convenience, we should probably define a function so we can just do somethin
       CHECK(is_normalized(<columnname>))
       ```
 </font>
+
 ## covariates
 
 *	Check that `level` is in the range corresponding to variable referenced by `variable_id`.
