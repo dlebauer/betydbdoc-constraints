@@ -51,7 +51,7 @@ For convenience, we should probably define a function so we can just do somethin
 * <font color='red'><ins>map: Minimum is zero.  Maximum = ?</ins></font>
 * <font color='red'><ins>soil: It's not clear if these should be constrained to a finite set of descriptors.  Right now the text seems somewhat free-form, but perhaps some of the information could be moved into soilnotes and this column could become an ENUM.</ins></font>
 * <font color='red'><ins>local_time: range should be -12 to +12.  This might more aptly be called timezone.  A comment should clarify the meaning; I assume it should mean something like "the number of hours local standard time is ahead of GMT".  Some kind of check might be possible to ensure consistence with the longitude.</ins></font>
-* <font color='red'><ins>sand\_pct, clay\_pct: These both have range 0--100, and sand_pct + clay_pct should be <= 100.</font>
+* <font color='red'><ins>sand\_pct, clay\_pct: These both have range 0--100, and sand\_pct + clay\_pct should be <= 100.</font>
 * sitename: unique and non-null; also, ensure it does not have leading or trailing white space and no internal sequences of 2 or more consecutive spaces.  (A similar white space constraint should apply to all textual keys in all tables.)
 	
 ## traits:
