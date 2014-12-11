@@ -56,12 +56,12 @@ For convenience, we should probably define a function so we can just do somethin
 	
 ## traits:
 
-*	identify required foreign keys
-*	It isn’t clear what a natural key would be, but it would probably involve several foreign key columns.  Perhaps (site_id, specie_id, cultivar_id, treatment_id, variable_id, and some combination of date and time fields.  But it is important to have some sort of uniqueness constraint other than just the default unique-id constraint.  For example, if the web-interface user accidentally presses the Create button on the New Trait page twice, two essentially equal trait rows will be created (they will differ only in the id and timestamp columns).
-*	check date/time fields consistency: For example, if dateloc is 91—97, date and date_year should both be NULL (but maybe old data doesn’t adhere to this?).  If date_year, date_month, or date_day is NULL, date should be NULL as well.
-*	Check mean is in the range corresponding to the variable referenced by variable_id.
-*	Constraint (n, statname): For example if n =1, statname should be NULL.
-*	specie_id and cultivar_id need to be consistent.
+*	It isn’t clear what a natural key would be, but it would probably involve several foreign key columns.  Perhaps (site_id, specie_id, cultivar_id, treatment_id, variable_id, and some combination of date and time fields.  But it is important to have some sort of uniqueness constraint other than just the default unique-id constraint.  For example, if the web-interface user accidentally presses the Create button on the New Trait page twice, two essentially equal trait rows will be created (they will differ only in the id and timestamp columns).  <font color='red'>See Uniqueness Constraints below!</font>
+*	date, dateloc, time, timeloc, date\_year, date\_month, date\_day, time\_hour, time\_minute: Check date and time fields consistency: For example, if dateloc is 91—97, date and date\_year should both be NULL (but maybe old data doesn’t adhere to this?).  If date\_year, date\_month, or date\_day is NULL, date should be NULL as well.  <font color='red'><ins>Also, dateloc and timeloc should be constrained to certain meaningful values.  (See comment above on managements.dateloc.)</ins></font>
+*	mean: Check mean is in the range corresponding to the variable referenced by variable_id.
+*	<font color='red'><ins>n, stat, statname: n should always be positive; if n = 1, statname should be NULL.  statname should be one of a specified set of values.  (See comments above on covariates.stat and covariates.statname.)</ins></font>
+*	specie_id and cultivar_id need to be consistent with one another.
+*	access_level: Range is 1--4.
 	
 ## treatments:
 
