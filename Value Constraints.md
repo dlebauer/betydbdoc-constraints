@@ -40,20 +40,20 @@ For convenience, we should probably define a function so we can just do somethin
 ## 	sites:
 
 <font color='red'>
- * <del>lat: range -90, 90</del>
- * <del>lon: range -180, 180</del>
- * <ins>geometry now replaces lat, lon, and masl.  It is not clear to me what constraints (if any) can or should be placed on geometry.</ins></font>
- * Standardize geographic names (city, country, state) using TIGER / OpenStreetMap.  
- * use geocoding / reverse geocoding to enfoce consistency between lat, lon and city, state, country 
- * country names should be normalized (use enum?)
- * som: 0 – 100
- * mat: range: -50, 150 
- * <font color='red'><del>masl: -100, 10,000</del> (replaced by geometry)
- * <ins>map: Minimum is zero.  Maximum = ?</ins>
- * <ins>soil: It's not clear if these should be constrained to a finite set of descriptors.  Right now the text seems somewhat free-form, but perhaps some of the information could be moved into soilnotes and this column could become an ENUM.</ins>
- * <ins>local_time: range should be -12 to +12.  This might more aptly be called timezone.  A comment should clarify the meaning; I assume it should mean something like "the number of hours local standard time is ahead of GMT".  Some kind of check might be possible to ensure consistence with the longitude.</ins>
- * <ins>sand_pct, clay_pct: These both have range 0--100, and sand_pct + clay_pct should be <= 100;
- * sitename: unique and non-null; also, ensure it does not have leading or trailing white space and no internal sequences of 2 or more consecutive spaces.  (A similar white space constraint should apply to all textual keys in all tables.)
+* <del>lat: range -90, 90</del>
+* <del>lon: range -180, 180</del>
+* <ins>geometry now replaces lat, lon, and masl.  It is not clear to me what constraints (if any) can or should be placed on geometry.</ins></font>
+* Standardize geographic names (city, country, state) using TIGER / OpenStreetMap.  
+* use geocoding / reverse geocoding to enfoce consistency between lat, lon and city, state, country 
+* country names should be normalized (use enum?)
+* som: 0 – 100
+* mat: range: -50, 150 
+* <font color='red'><del>masl: -100, 10,000</del> (replaced by geometry)
+* <ins>map: Minimum is zero.  Maximum = ?</ins>
+* <ins>soil: It's not clear if these should be constrained to a finite set of descriptors.  Right now the text seems somewhat free-form, but perhaps some of the information could be moved into soilnotes and this column could become an ENUM.</ins>
+* <ins>local_time: range should be -12 to +12.  This might more aptly be called timezone.  A comment should clarify the meaning; I assume it should mean something like "the number of hours local standard time is ahead of GMT".  Some kind of check might be possible to ensure consistence with the longitude.</ins>
+* <ins>sand_pct, clay_pct: These both have range 0--100, and sand_pct + clay_pct should be <= 100;
+* sitename: unique and non-null; also, ensure it does not have leading or trailing white space and no internal sequences of 2 or more consecutive spaces.  (A similar white space constraint should apply to all textual keys in all tables.)
 	
 ## traits:
 
