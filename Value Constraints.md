@@ -65,18 +65,25 @@ For convenience, we should probably define a function so we can just do somethin
 	
 ## treatments:
 
-*	possibly standardize capitalization of names (easiest would be to have all words in all names not capitalized; this would convey the most information because (e.g.) author names would stand out from other words); this would need to be done manually to avoid converting proper names to lowercase
-*	similarly for definitions
-*	control: there can be more than one control treatment per citation (currently there are)
-*	names should be unique within a citation and site pair
+*	name: Possibly standardize capitalization of names (easiest would be to have all words in all names not capitalized <ins>except for proper names and unit names where appropriate</ins>; this would convey the most information because (e.g.) author names would stand out from other words).  This would need to be done manually to avoid converting proper names to lowercase.  <font color='red'><ins>As stated below, names should be unique within a citation and site pair; standardizing capitalization will make this constraint more meaningful.</ins></font>
+*	definition: Treat captitalization similarly to that for names.
+*	control: There can be more than one control treatment per citation (currently there are).  <font color='red'>Below in the uniqueness section, it is stated that there can be only one control for a given citation _and site_.</font>
+*	Since (as stated below) names should be unique within a citation and site pair, standardizing capitalization will make this constraint more meaningful.
 
 ## users:
 
-*	Uniqueness: login, email
-*	Non-null: login, name(?), crypted_password, salt, access_level, page_access_level
+*	<del>Uniqueness: login, email</del> [See Uniqueness section below.]
+*	<del>Non-null: login, name(?), crypted_password, salt, access_level, page_access_level</del> [See Non Null section below.]
+*	<font color='red'>login: Enforce any constraints required by the Rails interface.</font>
+*	<font color='red'>email: Constrain to valid email addresses.</font>
+*	<font color='red'>country: Constrain to valid country names.</font>
+*	<font color='red'>area: This currently isn't very meaningful.  Perhaps this should be an ENUM.  Alteratively, it could be constraint to be some category word followed by free-form text.</font>
+*	<font color='red'>access\_level: Range is 1 - 4.</font>
+*	<font color='red'>page\_access\_level: Range is 1 - 4.</font>
+*	<font color='red'>postal\_code: Ideally, this should be constrained according to the country.  Since most users are (currently) from the U.S., we could at least constraint U.S. postal codes to "NNNNNN" or "NNNNNN-NNNN".</font>
 	
 
 
 ## yields: [see also traits constraints]
 
-* mean should be in the range of plausible yield values
+* mean: mean should be in the range of plausible yield values.
