@@ -50,9 +50,9 @@ For convenience, we should probably define a function so we can just do somethin
 * <font color='red'><del>masl: -100, 10,000</del> (replaced by geometry)</font>
 * <font color='red'>map: Minimum is zero.  Maximum = ?</font>
 * <font color='red'>soil: It's not clear if these should be constrained to a finite set of descriptors.  Right now the text seems somewhat free-form, but perhaps some of the information could be moved into soilnotes and this column could become an ENUM.</font>
-* <font color='red'>local_time: range should be -12 to +12.  This might more aptly be called timezone.  A comment should clarify the meaning; I assume it should mean something like "the number of hours local standard time is ahead of GMT".  Some kind of check might be possible to ensure consistence with the longitude.</font>
+* <font color='red'>local_time: Range should be -12 to +12.  This might more aptly be called timezone.  A comment should clarify the meaning; I assume it should mean something like "the number of hours local standard time is ahead of GMT".  Some kind of check might be possible to ensure consistence with the longitude.</font>
 * <font color='red'>sand\_pct, clay\_pct: These both have range 0--100, and sand\_pct + clay\_pct should be <= 100.</font>
-* sitename: unique and non-null; also, ensure it does not have leading or trailing white space and no internal sequences of 2 or more consecutive spaces.  (A similar white space constraint should apply to all textual keys in all tables.)
+* sitename: Unique and non-null (see below); also, ensure it does not have leading or trailing white space and no internal sequences of 2 or more consecutive spaces.  <font color='red'>This will make the uniqueness constraint more meaningful.</font>  (A similar white space constraint should apply to all textual keys in all tables.)
 	
 ## traits:
 
@@ -60,7 +60,7 @@ For convenience, we should probably define a function so we can just do somethin
 *	date, dateloc, time, timeloc, date\_year, date\_month, date\_day, time\_hour, time\_minute: Check date and time fields consistency: For example, if dateloc is 91—97, date and date\_year should both be NULL (but maybe old data doesn’t adhere to this?).  If date\_year, date\_month, or date\_day is NULL, date should be NULL as well.  <font color='red'><ins>Also, dateloc and timeloc should be constrained to certain meaningful values.  (See comment above on managements.dateloc.)</ins></font>
 *	mean: Check mean is in the range corresponding to the variable referenced by variable_id.
 *	<font color='red'>n, stat, statname: n should always be positive; if n = 1, statname should be NULL.  statname should be one of a specified set of values.  (See comments above on covariates.stat and covariates.statname.)</font>
-*	<font color='red'>specie_id and cultivar_id need to be consistent with one another.</font>
+*	<font color='red'>specie\_id and cultivar\_id need to be consistent with one another.</font>
 *	<font color='red'>access_level: Range is 1--4.</font>
 	
 ## treatments:
