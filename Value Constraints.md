@@ -39,10 +39,10 @@ For convenience, we should probably define a function so we can just do somethin
 
 ## 	sites:
 
-<font color='red'>
-* <del>lat: range -90, 90</del>
+
+* <font color='red'><del>lat: range -90, 90</del></font>
 * <del>lon: range -180, 180</del>
-* <ins>geometry now replaces lat, lon, and masl.  It is not clear to me what constraints (if any) can or should be placed on geometry.</ins></font>
+* <font color='red'><ins>geometry now replaces lat, lon, and masl.  It is not clear to me what constraints (if any) can or should be placed on geometry.</ins></font>
 * Standardize geographic names (city, country, state) using TIGER / OpenStreetMap.  
 * use geocoding / reverse geocoding to enfoce consistency between lat, lon and city, state, country 
 * country names should be normalized (use enum?)
