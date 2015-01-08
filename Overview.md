@@ -1,4 +1,4 @@
-# Introduction
+1. Introduction
 
 We are proposing implementation of database level contraints. We are consciously violating Ruby's "Active Record" approach. The [Rail Guide on Database Migrations](http://guides.rubyonrails.org/migrations.html#active-record-and-referential-integrity) suggests
 
@@ -17,6 +17,8 @@ Given that the Ruby web application is only one of the ways in which we use the 
 Conversely, foreigner _does not_ do anything to enforce foreign key constraints at the client application level.  It does not, for example, add any model validation code that would prevent violation of foreign-key constraints at the Ruby level and generate a user-friendly error message when a user attempts a change that would cause a violation of those constraints.
 
 So whether we use foreigner or not and whether we switch to storing the database structure in the SQL-based db/production\_structure.rb file are largely unrelated issues.  The main reason for not using foreigner is that it requires learning (an admittedly minimal) new Ruby-based API and doesn't give us that much in return.  It would potentially allow us to continue using schema.rb to store database structure, foreign key constraints and all, but since we already have needed to switch to db/production_structure.rb to store trigger functions, this consideration is moot.
+
+What _is_ clear, however, is that we want to enforce database constraints at the database level whether this be through gems like foreigner that would also us to do this in the language of Rails or whether it be directly in the SQL language.
 
 # Categories of Constraints
 
