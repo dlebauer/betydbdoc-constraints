@@ -1,4 +1,4 @@
-1. Introduction
+# Introduction
 
 We are proposing implementation of database level contraints. We are consciously violating Ruby's "Active Record" approach. The [Rail Guide on Database Migrations](http://guides.rubyonrails.org/migrations.html#active-record-and-referential-integrity) suggests
 
