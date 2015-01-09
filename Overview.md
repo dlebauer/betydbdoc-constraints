@@ -12,7 +12,7 @@ The `db/structure.sql` approach sounds simpler to me. I think that the following
 
 Given that the Ruby web application is only one of the ways in which we use the database (e.g. we don't want to have to use the API with all of our R code ... or do we?), it seems reasonable to go with the SQL database-level constraints.
 
-**Note SR:** To clarify these points somewhat, the foreigner gem _does_ in fact add constraints at the database level.  What it does is allow the programmer to express those foreign key constraints in Ruby code rather than in the SQL language.  It also plays nicely with schema.rb so that if adding foreign key constraints were the only consideration in choosing between db/schema.rb and db/production\_structure.rb, there would be no compelling reason to opt for the latter.
+**Note (SR):** To clarify these points somewhat, the foreigner gem _does_ in fact add constraints at the database level.  What it does is allow the programmer to express those foreign key constraints in Ruby code rather than in the SQL language.  It also plays nicely with schema.rb so that if adding foreign key constraints were the only consideration in choosing between db/schema.rb and db/production\_structure.rb, there would be no compelling reason to opt for the latter.
 
 Conversely, foreigner _does not_ do anything to enforce foreign key constraints at the client application level.  It does not, for example, add any model validation code that would prevent violation of foreign-key constraints at the Ruby level and generate a user-friendly error message when a user attempts a change that would cause a violation of those constraints.
 
